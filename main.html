@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roblox Cookie Thief</title>
+</head>
+<body>
+    <h1>Welcome to the Roblox Cookie Thief!</h1>
+    <p>Click the button below to steal your Roblox cookie and reveal your identity!</p>
+    <button onclick="stealCookie()">Steal my Roblox cookie!</button>
+
+    <script>
+        function stealCookie() {
+            var cookies = document.cookie.split(';');
+
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = cookies[i].trim();
+
+                if (cookie.startsWith('.ROBLOSECURITY=')) {
+                    alert('Stolen cookie: ' + cookie.substring('.ROBLOSECURITY='.length));
+                    break;
+                }
+            }
+        }
+    </script>
+</body>
+</html>
